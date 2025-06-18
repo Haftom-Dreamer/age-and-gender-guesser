@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Name Guesser</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>👀 Guess Your Age and Gender</h1>
+
+  <form method="POST">
+    <input type="text" name="username" placeholder="Enter your name" required><br>
+    <button type="submit">Guess Me</button>
+  </form>
+
+  {% if na %}
+  <div class="result">
+    <h2>Hello, {{ na }}!</h2>
+    <p>🔢 Estimated Age: <strong>{{ age }}</strong></p>
+    <p>🚻 Guessed Gender: <strong>{{ gender }}</strong></p>
+  </div>
+  {% endif %}
+</body>
+</html>
